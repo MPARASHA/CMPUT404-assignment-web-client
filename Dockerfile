@@ -13,5 +13,6 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8     
 USER me
 WORKDIR /home/me
+CMD python3 freetests.py
 # This is how we get your tests to run (arbitrary shell scripts)
 # ADD arb.sh /home/me/arb.sh
