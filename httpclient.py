@@ -128,15 +128,15 @@ class HTTPClient(object):
             path = '/'
 
         # POST data
-        urlBody = ""
+        postBody = ""
 
         if(args is not None):
-            urlBody = urllib.parse.urlencode(args)
+            postBody = urllib.parse.urlencode(args)
         
-        contLen = len(urlBody)
+        contLen = len(postBody)
 
         # construct POST request
-        request = "POST {path} HTTP/1.1\r\nHost: {host}\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: {contLen}\r\n\r\n{urlBody}""".format(path= path, host= host, contLen= contLen, urlBody= urlBody)
+        request = "POST {path} HTTP/1.1\r\nHost: {host}\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: {contLen}\r\n\r\n{postBody}""".format(path= path, host= host, contLen= contLen, postBody= postBody)
 
         # send the POST request
         self.sendall(request)
